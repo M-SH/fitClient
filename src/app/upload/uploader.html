@@ -1,0 +1,9 @@
+<div style="max-width: 400px; margin: 20px auto; text-align: center;">
+    <h3>Upload a File</h3>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="uploadFile()" [disabled]="!selectedFile || isUploading">
+        {{ isUploading ? 'Uploading...' : 'Upload' }}
+    </button>
+
+    <p *ngIf="uploadMessage">{{ uploadMessage }}</p>
+</div>
